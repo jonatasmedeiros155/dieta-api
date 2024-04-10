@@ -5,16 +5,19 @@
 Esta é uma API desenvolvida para o controle de dieta diária. Com esta aplicação, você pode cadastrar novas refeições, excluir refeições existentes e visualizar métricas importantes para sua dieta, como quantidades totais de alimentos dentro e fora da dieta.
 
 ## Rotas de Usuários
-```Bash
+
 - Retorna todos os usuários cadastrados.
+```Bash
 GET /api/users
 ```
-```Bash
+
 - Cria um novo usuário.
+```Bash
 POST /api/users
 ```
-```Bash
+
 - Faz login de um usuário existente e retorna um token JWT para autenticação.
+```Bash
 POST /api/login
 ```
 
@@ -22,28 +25,34 @@ POST /api/login
 - Exemplo de cabeçalho de autorização -> Authorization: Bearer seu-token-jwt
 
 ## Rotas de Refeições
-```Bash
+
 - Cria uma nova refeição.
+```Bash
 POST /api/meals
 ```
-```Bash
+
 - Atualiza uma refeição existente.
+```Bash
 PUT /api/meals/:id
 ```
-```Bash
+
 - Exclui uma refeição existente.
+```Bash
 DELETE /api/meals/:id
 ```
-```Bash
+
 - Retorna detalhes de uma refeição específica.
+```Bash
 GET /api/meals/:id
 ```
-```Bash
+
 - Retorna todas as refeições de um usuário específico.
+```Bash
 GET /api/users/:userId/meals
 ```
-```Bash
+
 - Retorna as métricas de consumo de um usuário específico.
+```Bash
 GET /api/users/:userId/metrics
 ```
 
