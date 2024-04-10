@@ -5,19 +5,47 @@
 Esta é uma API desenvolvida para o controle de dieta diária. Com esta aplicação, você pode cadastrar novas refeições, excluir refeições existentes e visualizar métricas importantes para sua dieta, como quantidades totais de alimentos dentro e fora da dieta.
 
 ## Rotas de Usuários
-GET /api/users: Retorna todos os usuários cadastrados.
-POST /api/users: Cria um novo usuário.
-POST /api/login: Faz login de um usuário existente e retorna um token JWT para autenticação.
-Para acessar as rotas protegidas pela autenticação JWT, é necessário incluir o token JWT no cabeçalho Authorization da requisição HTTP.
-Exemplo de cabeçalho de autorização -> Authorization: Bearer seu-token-jwt
+```Bash
+- Retorna todos os usuários cadastrados.
+GET /api/users
+```
+```Bash
+- Cria um novo usuário.
+POST /api/users
+```
+```Bash
+- Faz login de um usuário existente e retorna um token JWT para autenticação.
+POST /api/login
+```
+
+- Para acessar as rotas protegidas pela autenticação JWT, é necessário incluir o token JWT no cabeçalho Authorization da requisição HTTP.
+- Exemplo de cabeçalho de autorização -> Authorization: Bearer seu-token-jwt
 
 ## Rotas de Refeições
-POST /api/meals: Cria uma nova refeição.
-PUT /api/meals/:id: Atualiza uma refeição existente.
-DELETE /api/meals/:id: Exclui uma refeição existente.
-GET /api/meals/:id: Retorna detalhes de uma refeição específica.
-GET /api/users/:userId/meals: Retorna todas as refeições de um usuário específico.
-GET /api/users/:userId/metrics: Retorna as métricas de consumo de um usuário específico.
+```Bash
+- Cria uma nova refeição.
+POST /api/meals
+```
+```Bash
+- Atualiza uma refeição existente.
+PUT /api/meals/:id
+```
+```Bash
+- Exclui uma refeição existente.
+DELETE /api/meals/:id
+```
+```Bash
+- Retorna detalhes de uma refeição específica.
+GET /api/meals/:id
+```
+```Bash
+- Retorna todas as refeições de um usuário específico.
+GET /api/users/:userId/meals
+```
+```Bash
+- Retorna as métricas de consumo de um usuário específico.
+GET /api/users/:userId/metrics
+```
 
 ## Regras da aplicação
 
@@ -49,40 +77,43 @@ GET /api/users/:userId/metrics: Retorna as métricas de consumo de um usuário e
 
 ## Instalação
 
-```bash
-# Clone o repositório
-
+- Clone o repositório
+```Bash
 git clone https://github.com/matheusdc1/dieta-api.git
+```
 
-# Vá para a pasta do server
-
+- Vá para a pasta do server
+```Bash
 cd dieta-api
+```
 
-# Instalar dependências
-
+- Instalar dependências
+```Bash
 npm install
 ```
 ## Como usar
 
-```bash
-#Criar um database no MySQL Workbench
+- Criar um database no MySQL 
 
+```Bash
 CREATE DATABASE nome_do_banco_de_dados;
-
-#Gerar as migrations
-
+```
+- Gerar as migrations
+```Bash
 npx prisma migrate dev
-
-#Criar um arquivo .env na pasta raiz do projeto
-
+```
+- Criar um arquivo .env na pasta raiz do projeto
+```Bash
 DATABASE_URL="mysql://seu-usuario-db:sua-senha@localhost:3306/nome-do-banco-de-dados"
 JWT_SECRET=sua-chave-secreta
 PORT=3333
+```
 
-#Iniciar o server
-
+- Iniciar o server
+```Bash
 npm run dev
-
+```
+```Bash
 #Acessar localhost
 #http://localhost:3333
 ```
